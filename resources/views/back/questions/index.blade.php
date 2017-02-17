@@ -3,13 +3,16 @@
 @section('title', 'Page Title')
 
 @section('content')
-<div class="row">
-          <a href="{{route('question.create')}}"class="waves-effect waves-light btn">Ajouter</a>
+
+          
            @if($flash = session('flashMessage'))
         <div class="container flash">
         <div class="col s12">{{$flash}}</div>
         </div>
         @endif
+        
+<div class="row">
+<a href="{{route('question.create')}}"class="waves-effect waves-light btn">Ajouter</a>
         
 </div>
   <div class="row">

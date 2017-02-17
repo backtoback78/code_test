@@ -36,6 +36,33 @@
             $('#textarea1').val('New Text');
             $('#textarea1').trigger('autoresize');
             $('.modal').modal();
+            $('.flash').delay(1000).css({
+
+                position: 'fixed',
+
+                top: '0.5%',
+
+                left: '40%',
+
+                width: '15%',
+
+                height: '50px',
+
+                backgroundColor: 'orange',
+
+                display: 'flex',
+
+                textAlign: 'center',
+
+                alignItems: 'center',
+
+                color: '#fff',
+
+                fontWeight: '800',
+
+                borderRadius: '10px'
+
+       }).fadeOut(1000);
              
             })(jQuery);
           </script>

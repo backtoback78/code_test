@@ -48,9 +48,10 @@ class LoginController extends Controller
     public function showLogout()
     {
 
-        auth()->logout(); 
+        auth()->logout();
+        session()->flash('flashMessage', 'Vous êtes déconnecté');
 
-        return redirect()->route('question.index');
+        return redirect()->intended('/');
 
     }
       

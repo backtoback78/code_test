@@ -41,7 +41,9 @@ class QuestionController extends Controller
     {
         
         $categories = Category::pluck('name', 'id');
+        
         return view('back.questions.create', compact('categories'));;
+        
         
     }
 
@@ -71,6 +73,9 @@ class QuestionController extends Controller
             }
            
             $question->save();
+            session()->flash('flashmessage', 'question crée');
+
+            return redirect()->route('question.index');
 
     }
 
@@ -95,6 +100,7 @@ class QuestionController extends Controller
     {
         $question = Question::find($id);
         $categories = Category::pluck('name', 'id');
+        
         
         return view('back.questions.edit', compact('question','categories'));
     }

@@ -25,8 +25,6 @@ class QuestionRequest extends FormRequest
     {
         return [
             'title' => 'required|max:100',
-            'abstract' => 'max:100',
-            'content' => 'max:200',
             'category_id' =>'integer',          
             'published_at' => 'in:on',
             'status' => 'in:on',

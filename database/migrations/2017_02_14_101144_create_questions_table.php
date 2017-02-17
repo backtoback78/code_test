@@ -18,8 +18,8 @@ class CreateQuestionsTable extends Migration
             $table->string('title');
             $table->integer('category_id')->unsigned()->nullable();
             $table->integer('users_id')->unsigned()->nullable();
-            $table->string('abstract', 100);
-            $table->text('content');
+            $table->string('abstract', 100)->nullable();
+            $table->text('content', 200)->nullable();
             $table->dateTime('published_at')->nullable();
             $table->enum('status', ['published', 'unpublished'])->default('unpublished');
             $table->foreign('category_id')->references('id')->on('categories')->onDelete('SET NULL');

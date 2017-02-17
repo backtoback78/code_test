@@ -44,9 +44,6 @@
               <label >Enoncé</label>
             </div>     
       </div>
-
-      
-
           
       <!-- Switch -->
       <div class="row">

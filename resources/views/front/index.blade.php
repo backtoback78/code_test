@@ -3,6 +3,15 @@
 @section('title', 'Page Title')
 
 @section('content')
+@if( $flash = session('flashMessage') )
+
+   <div class="flash">
+
+       <div class="col s12">{{$flash}}</div>
+
+   </div>
+
+@endif
 
 
 <div class="row">
