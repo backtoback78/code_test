@@ -11,6 +11,15 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+
+Route::get('/', 'FrontController@index')->name('home');
+Route::get('/category/{id}/{slug?}', 'FrontController@showQuestionsByCat');
+Route::get('/question/{id}', 'FrontController@showQuestion');
+Route::any('login', 'LoginController@showLogin')->name('login');
+Route::get('logout', 'LoginController@showLogout')->name('logout');
+Route::get('/contact', 'FrontController@showContact')->name('contact');
+Route::get('/mention', 'FrontController@showMention')->name('mention');
+Route::group(['prefix' => 'dashboard', 'middleware' => 'auth'], function(){
+    
+    Route::resource('question', 'Admin\QuestionController'); // routes du RESTfull qui permettrons de faire le CRUD de la ressource robots en base de données   
 });

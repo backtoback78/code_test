@@ -16,13 +16,13 @@ class CreateQuestionsTable extends Migration
         Schema::create('questions', function (Blueprint $table) {
             $table->increments('id');
             $table->string('title');
-            $table->integer('questions_id')->unsigned()->nullable();
+            $table->integer('category_id')->unsigned()->nullable();
             $table->integer('users_id')->unsigned()->nullable();
             $table->string('abstract', 100);
             $table->text('content');
-            $table->dateTime('date')->nullable();
-            $table->enum('status', ['published', 'unpublished', 'draft'])->default('unpublished');
-            $table->foreign('categories_id')->references('id')->on('categories')->onDelete('SET NULL');
+            $table->dateTime('published_at')->nullable();
+            $table->enum('status', ['published', 'unpublished'])->default('unpublished');
+            $table->foreign('category_id')->references('id')->on('categories')->onDelete('SET NULL');
             $table->foreign('users_id')->references('id')->on('users')->onDelete('SET NULL');
             $table->timestamps();
 

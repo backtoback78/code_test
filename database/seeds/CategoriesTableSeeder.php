@@ -15,11 +15,13 @@ class CategoriesTableSeeder extends Seeder
                 [
 
                 'name' => 'PHP',
+                
           
                 ],
 
                 [
                 'name' => 'MySQL',
+                
                 
                 ],
 

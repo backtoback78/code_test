@@ -27,18 +27,16 @@ $factory->define(App\User::class, function (Faker\Generator $faker) {
 
 $factory->define(App\Question::class, function (Faker\Generator $faker) {
 
-	$tab = ["published", "unpublished", "draft"];
+	$tab = ["published", "unpublished"];
 	$rand = array_rand($tab, 1);
 	
-
-
     return [
     	'categories_id' => rand(1,2),
     	'users_id' => $faker->users_id, // fait la liason entre nos users et les robots
         'title' => $faker->title,
         'abstract' => $faker->paragraph(rand(1,4)),
         'content' => $faker->paragraph(rand(1,4)),
-        'date' => $faker->dateTime(),
+        'published_at' => $faker->dateTime(),
         'status' => $tab[$rand]
         
 
