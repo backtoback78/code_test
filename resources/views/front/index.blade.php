@@ -16,7 +16,7 @@
 
 <div class="row">
 	<div class="offset-s4 col s6">
-		{{ $questions->links() }}
+		{{ $questions->links() }} <!-- pagination -->
 </div>
 @foreach($questions as $question)
 	<div class="row">
